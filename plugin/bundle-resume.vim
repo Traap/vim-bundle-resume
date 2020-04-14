@@ -2,6 +2,7 @@
 if exists('g:loaded_bundle_resume')
   finish
 endif
+let g:loaded_bundle_resume=1
 " -------------------------------------------------------------------------- }}}
 " {{{ Toggle my resume application.
 let g:resume_toggle=0
