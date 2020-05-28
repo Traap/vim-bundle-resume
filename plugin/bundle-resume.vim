@@ -12,10 +12,10 @@ function! ToggleResumeEditor()
  let l:resume_toggle_okay=0
 
  " LaTeX files I use with my resume application. 
- let l:resume=expaned('~/git/resume/resume/resume.tex')
- let l:jobs=expaned('~/git/resume/jobs/jobs.csv')
- let l:jobnbr=expaned('~/git/resume/jobs/jobnbr.tex')
- let l:cover=expland('~/git/resume/letter/coverletter.tex')
+ let l:resume=expand('~/git/resume/resume/resume.tex')
+ let l:jobs=expand('~/git/resume/jobs/jobs.csv')
+ let l:jobnbr=expand('~/git/resume/jobs/jobnbr.tex')
+ let l:cover=expand('~/git/resume/letter/coverletter.tex')
 
  " Open files files in specific splits.
  if !g:resume_toggle
