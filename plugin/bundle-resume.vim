@@ -1,21 +1,24 @@
-" {{{ bundle-resume.vim 
+" {{{ bundle-resume.vim
+
 if exists('g:loaded_bundle_resume')
   finish
 endif
 let g:loaded_bundle_resume=1
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Toggle my resume application.
+
 let g:resume_toggle=0
 function! ToggleResumeEditor()
 
  " Do not toggle if resume files are missing.
  let l:resume_toggle_okay=0
 
- " LaTeX files I use with my resume application. 
- let l:resume=expand('~/git/resume/resume/resume.tex')
- let l:jobs=expand('~/git/resume/jobs/jobs.csv')
- let l:jobnbr=expand('~/git/resume/jobs/jobnbr.tex')
- let l:cover=expand('~/git/resume/letter/coverletter.tex')
+ " LaTeX files I use with my resume application.
+ let l:resume=expand('$GITHOME/resume/resume/resume.tex')
+ let l:jobs=expand('$GITHOME/resume/jobs/jobs.csv')
+ let l:jobnbr=expand('$GITHOME/resume/jobs/jobnbr.tex')
+ let l:cover=expand('$GITHOME/resume/letter/coverletter.tex')
 
  " Open files files in specific splits.
  if !g:resume_toggle
@@ -37,6 +40,7 @@ function! ToggleResumeEditor()
   end
   let g:resume_toggle =! g:resume_toggle
 endfunction
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Compile my resume.
 function! CompileSS(file)
@@ -69,8 +73,11 @@ function! CompileSS(file)
   "call l:compiler.start()
   call vimtex#compiler#compile_ss()
 endfunction
+
 " -------------------------------------------------------------------------- }}}
-" Keybindings
-nnoremap [r :call CompileSS('~/git/resume/letter/coverletter.tex')<cr>
+" {{{ Keybindings
+
+nnoremap [r :call CompileSS('$GITHOME/resume/letter/coverletter.tex')<cr>
 nnoremap ]r :call ToggleResumeEditor()<cr>
+
 " -------------------------------------------------------------------------- }}}
